@@ -45,7 +45,7 @@ public class adminatms {
     public String toString() {
         return "adminatms{" + "atms=" + atms + '}';
     }
-  public void setPersona(Atm p) {
+  public void setatm(Atm p) {
         this.atms.add(p);
     }
 

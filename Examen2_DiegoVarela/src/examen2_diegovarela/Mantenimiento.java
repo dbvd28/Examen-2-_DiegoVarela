@@ -5,6 +5,7 @@
  */
 package examen2_diegovarela;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -12,13 +13,14 @@ import java.util.Date;
  *
  * @author diego
  */
-public class Mantenimiento extends Users{
-    private ArrayList <Atm>reparar=new ArrayList();
+public class Mantenimiento extends Users implements Serializable {
+
+    private ArrayList<Atm> reparar = new ArrayList();
+    private static final long SerialVersionUID = 777L;
 
     public Mantenimiento(int idusuario, String primnombre, String segunnombre, String apellido, String segunapellido, Date nacimiento, Date afiliacion, String contraseña) {
         super(idusuario, primnombre, segunnombre, apellido, segunapellido, nacimiento, afiliacion, contraseña);
     }
-   
 
     public ArrayList<Atm> getReparar() {
         return reparar;
@@ -27,5 +29,5 @@ public class Mantenimiento extends Users{
     public void setReparar(ArrayList<Atm> reparar) {
         this.reparar = reparar;
     }
-    
+
 }

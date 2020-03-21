@@ -5,18 +5,19 @@
  */
 package examen2_diegovarela;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  * @author diego
  */
-public class Transaccion {
+public class Transaccion implements Serializable {
     private String numcuenta;
     private String descripcion;
     private String fecha;
     private int id;
-
+private static final long SerialVersionUID = 777L;
     public Transaccion(String numcuenta, String descripcion, String fecha, int id) {
         this.numcuenta = numcuenta;
         this.descripcion = descripcion;

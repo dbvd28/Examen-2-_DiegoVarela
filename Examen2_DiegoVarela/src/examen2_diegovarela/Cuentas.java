@@ -5,15 +5,20 @@
  */
 package examen2_diegovarela;
 
+import java.io.Serializable;
+
+
+
 /**
  *
  * @author diego
  */
-public class Cuentas {
+public class Cuentas implements Serializable {
     private int numcuenta;
     private int saldo;
     private int idusuario;
-
+  private static final long SerialVersionUID = 777L;
+  
     public Cuentas(int numcuenta, int saldo, int idusuario) {
         this.numcuenta = numcuenta;
         this.saldo = saldo;

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -135,7 +136,22 @@ public class Exam2 extends javax.swing.JFrame {
         jButton14 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tb_transacciones = new javax.swing.JTable();
+        jButton16 = new javax.swing.JButton();
+        jLabel45 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        tf_numcuenta1 = new javax.swing.JTextField();
+        tf_saldo1 = new javax.swing.JTextField();
+        tf_idprop1 = new javax.swing.JTextField();
+        cb_cuentas2 = new javax.swing.JComboBox<>();
+        jLabel49 = new javax.swing.JLabel();
+        jButton17 = new javax.swing.JButton();
+        jButton18 = new javax.swing.JButton();
+        jLabel50 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel36 = new javax.swing.JLabel();
         cb_cuentas = new javax.swing.JComboBox<>();
@@ -896,31 +912,148 @@ public class Exam2 extends javax.swing.JFrame {
 
         tab.addTab("Deposito a cuentas ajenas", jPanel4);
 
+        tb_transacciones.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Num cuenta", "Descripcion", "Fecha", "Id usuario"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tb_transacciones);
+
+        jButton16.setText("Mostrar transacciones");
+        jButton16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton16MouseClicked(evt);
+            }
+        });
+
+        jLabel45.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel45.setText("Transacciones");
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 494, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(165, 165, 165)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel45)
+                    .addComponent(jButton16))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 333, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel45)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addComponent(jButton16)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
         );
 
-        tab.addTab("tab5", jPanel5);
+        tab.addTab("Ver las transacciones", jPanel5);
+
+        jLabel46.setText("Numero de la cuenta:");
+
+        jLabel47.setText("Saldo disponible:");
+
+        jLabel48.setText("Id del usuario propietario:");
+
+        jLabel49.setText("Cuentas:");
+
+        jButton17.setText("Mostrar");
+        jButton17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton17MouseClicked(evt);
+            }
+        });
+
+        jButton18.setText("Estado de cuenta");
+        jButton18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton18MouseClicked(evt);
+            }
+        });
+
+        jLabel50.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel50.setText("Elige que cuenta quieres revisar");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 494, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel6Layout.createSequentialGroup()
+                                    .addComponent(jLabel47)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(tf_saldo1))
+                                .addGroup(jPanel6Layout.createSequentialGroup()
+                                    .addComponent(jLabel48)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tf_idprop1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel6Layout.createSequentialGroup()
+                                    .addComponent(jLabel46)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(tf_numcuenta1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel50)))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton18)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel49)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cb_cuentas2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton17)))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 333, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel50)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cb_cuentas2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel49)
+                    .addComponent(jButton17))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addComponent(jButton18)
+                .addGap(25, 25, 25)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel46)
+                    .addComponent(tf_numcuenta1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel47)
+                    .addComponent(tf_saldo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel48)
+                    .addComponent(tf_idprop1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23))
         );
 
-        tab.addTab("tab6", jPanel6);
+        tab.addTab("Estado de cuenta", jPanel6);
 
         jLabel36.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
         jLabel36.setText("Cuanto dinero desea retirar?");
@@ -1134,7 +1267,7 @@ public class Exam2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         adminatms aa = new adminatms("./atms.txt");
         aa.cargarArchivo();
-        aa.setPersona(new Atm(tf_ubic.getText(), Integer.parseInt(tf_idatm.getText()), jd_fabric.getDate(), tf_manetenimiento.getText()));
+        aa.setatm(new Atm(tf_ubic.getText(), Integer.parseInt(tf_idatm.getText()), jd_fabric.getDate(), tf_manetenimiento.getText()));
         aa.escribirArchivo();
         JOptionPane.showMessageDialog(null, "ATM creado con exito");
         Crear_atm.setVisible(false);
@@ -1236,9 +1369,10 @@ public class Exam2 extends javax.swing.JFrame {
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
         // TODO add your handling code here:
-        admincliente ac = new admincliente("./clientes.txt");
-        ac.cargarArchivo();
         try {
+            admincliente ac = new admincliente("./clientes.txt");
+            ac.cargarArchivo();
+
             for (cliente c : ac.getCliente()) {
                 if (c.getIdusuario() == Integer.parseInt(tf_usuario.getText()) && c.getContraseña().equals(pf_contraseña.getText())) {
                     JOptionPane.showMessageDialog(null, "Bienvenido " + c.getPrimnombre());
@@ -1345,6 +1479,7 @@ public class Exam2 extends javax.swing.JFrame {
             c.getListacuentas().add(new Cuentas(Integer.parseInt(tf_numcuenta.getText()), Integer.parseInt(tf_saldo.getText()), Integer.parseInt(tf_idprop.getText())));
             return c;
         }).forEachOrdered((c) -> {
+            JOptionPane.showMessageDialog(null, "Se creo su nueva cuenta");
             try {
                 adminlog al = new adminlog("./Log.txt");
                 al.cargarArchivo();
@@ -1355,6 +1490,7 @@ public class Exam2 extends javax.swing.JFrame {
 
             }
         });
+        ac.escribirArchivo();
     }//GEN-LAST:event_jButton8MouseClicked
 
     private void tabStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_tabStateChanged
@@ -1381,24 +1517,33 @@ public class Exam2 extends javax.swing.JFrame {
         String id = JOptionPane.showInputDialog("Ingrese su id para confirmar:");
         aa.getAtms().stream().filter((atm) -> (atm.getUbicacion().equals(ubic))).forEachOrdered((atm) -> {
             if (atm.getSaldo() < Integer.parseInt(tf_retiro.getText())) {
+
                 ac.getCliente().stream().filter((c) -> (c.getIdusuario() == Integer.parseInt(id))).forEachOrdered((c) -> {
+
                     c.getListacuentas().forEach((cuen) -> {
+
                         Cuentas temp = (Cuentas) cb_cuentas.getSelectedItem();
                         if (temp != null) {
-                            if (temp.getSaldo() < Integer.parseInt(tf_retiro.getText())) {
+
+                            if (temp.getSaldo() > Integer.parseInt(tf_retiro.getText()) && temp.getNumcuenta() == cuen.getNumcuenta()) {
                                 atm.setSaldo(atm.getSaldo() - Integer.parseInt(tf_retiro.getText()));
                                 cuen.setSaldo(cuen.getSaldo() - Integer.parseInt(tf_retiro.getText()));
-                                JOptionPane.showMessageDialog(null, "Retiro eho con exito");
+                                aa.escribirArchivo();
+                                ac.escribirArchivo();
+                                JOptionPane.showMessageDialog(null, "Retiro echo con exito");
+
                                 try {
                                     adminlog al = new adminlog("./Log.txt");
                                     al.cargarArchivo();
                                     Date d = new Date();
                                     al.setlog(new Log(c.getPrimnombre(), "Retiro dinero", d.toString()));
                                     al.escribirArchivo();
+                                    c.getTransacciones().add(new Transaccion(Integer.toString(cuen.getNumcuenta()), "Retiro de dinero", d.toString(), Integer.parseInt(id)));
                                 } catch (IOException ex) {
 
                                 }
                                 cliente.setVisible(false);
+
                             } else {
                                 try {
                                     adminlog al = new adminlog("./Log.txt");
@@ -1408,7 +1553,7 @@ public class Exam2 extends javax.swing.JFrame {
                                     al.escribirArchivo();
                                     admintransaccion at = new admintransaccion("./Transacciones.txt");
                                     at.cargarArchivo();
-                                    at.settransaccion(new Transaccion(Integer.toString(temp.getNumcuenta()), "Se deposito el dinero a la cuenta antes mostrada", d.toString(), Integer.parseInt(id)));
+                                    at.settransaccion(new Transaccion(Integer.toString(temp.getNumcuenta()), "Retiro de dinero", d.toString(), Integer.parseInt(id)));
                                     at.escribirArchivo();
                                 } catch (IOException ex) {
 
@@ -1437,7 +1582,7 @@ public class Exam2 extends javax.swing.JFrame {
         ac.cargarArchivo();
         String id = JOptionPane.showInputDialog("Ingrese su id porfavor");
         ac.getCliente().stream().filter((cl) -> (cl.getIdusuario() == Integer.parseInt(id))).map((cl) -> new DefaultComboBoxModel(cl.getListacuentas().toArray())).forEachOrdered((model) -> {
-            cb_cuentas.setModel(model);
+            cb_cuentas1.setModel(model);
         });
     }//GEN-LAST:event_jButton11MouseClicked
 
@@ -1449,24 +1594,29 @@ public class Exam2 extends javax.swing.JFrame {
         ac.getCliente().forEach((c) -> {
             if (c.getIdusuario() == Integer.parseInt(id)) {
                 c.getListacuentas().forEach((cuen) -> {
-                    Cuentas temp = (Cuentas) cb_cuentas.getSelectedItem();
+                    Cuentas temp = (Cuentas) cb_cuentas1.getSelectedItem();
                     if (temp != null) {
-                        cuen.setSaldo(cuen.getSaldo() + Integer.parseInt(tf_retiro1.getText()));
-                        JOptionPane.showMessageDialog(null, "Se agrego con exito");
-                        try {
-                            adminlog al = new adminlog("./Log.txt");
-                            al.cargarArchivo();
-                            Date d = new Date();
-                            al.setlog(new Log(c.getPrimnombre(), "Deposito dinero", d.toString()));
-                            al.escribirArchivo();
-                            admintransaccion at = new admintransaccion("./Transacciones.txt");
-                            at.cargarArchivo();
-                            at.settransaccion(new Transaccion(Integer.toString(temp.getNumcuenta()), "Se deposito el dinero a la cuenta antes mostrada", d.toString(), Integer.parseInt(id)));
-                            at.escribirArchivo();
-                        } catch (IOException ex) {
+                        if (cuen.getNumcuenta() == temp.getNumcuenta()) {
+                            cuen.setSaldo(cuen.getSaldo() + Integer.parseInt(tf_retiro1.getText()));
+                            ac.escribirArchivo();
+                            JOptionPane.showMessageDialog(null, "Se agrego con exito");
 
+                            try {
+                                adminlog al = new adminlog("./Log.txt");
+                                al.cargarArchivo();
+                                Date d = new Date();
+                                al.setlog(new Log(c.getPrimnombre(), "Deposito dinero", d.toString()));
+                                al.escribirArchivo();
+                                c.getTransacciones().add(new Transaccion(Integer.toString(cuen.getNumcuenta()), "Se deposito dinero a la cuenta", d.toString(), Integer.parseInt(id)));
+                                admintransaccion at = new admintransaccion("./Transacciones.txt");
+                                at.cargarArchivo();
+                                at.settransaccion(new Transaccion(Integer.toString(temp.getNumcuenta()), "Se deposito el dinero a la cuenta antes mostrada", d.toString(), Integer.parseInt(id)));
+                                at.escribirArchivo();
+                            } catch (IOException ex) {
+
+                            }
+                            cliente.setVisible(false);
                         }
-                        cliente.setVisible(false);
                     }
                 });
             } else {
@@ -1502,37 +1652,107 @@ public class Exam2 extends javax.swing.JFrame {
 
     private void jButton15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton15MouseClicked
         // TODO add your handling code here:
+        admincliente ac = new admincliente("./clientes.txt");
+        ac.cargarArchivo();
         String id = JOptionPane.showInputDialog("Ingrese su id para confirmar:");
-        Cuentas temp = (Cuentas) cb_cuentascli.getSelectedItem();
-        if (temp != null) {
-            temp.setSaldo(temp.getSaldo() + Integer.parseInt(tf_saldoa.getText()));
+        ac.getCliente().stream().filter((c) -> (c.getIdusuario() == Integer.parseInt(id))).map((c) -> {
+            c.getListacuentas().forEach((cuen) -> {
+                Cuentas temp = (Cuentas) cb_cuentascli.getSelectedItem();
+                if (temp != null) {
+                    if (temp.getNumcuenta() == cuen.getNumcuenta()) {
+                        cuen.setSaldo(temp.getSaldo() + Integer.parseInt(tf_saldoa.getText()));
+                        ac.escribirArchivo();
+                        try {
+                            adminlog al = new adminlog("./Log.txt");
+                            al.cargarArchivo();
+                            Date d = new Date();
+                            al.setlog(new Log(Integer.toString(temp.getNumcuenta()), "Se deposito el dinero", d.toString()));
+                            al.escribirArchivo();
+                            c.getTransacciones().add(new Transaccion(Integer.toString(temp.getNumcuenta()), "Se deposito dinero a la cuenta", d.toString(), Integer.parseInt(id)));
+                            admintransaccion at = new admintransaccion("./Transacciones.txt");
+                            at.cargarArchivo();
+                            at.settransaccion(new Transaccion(Integer.toString(temp.getNumcuenta()), "Se deposito el dinero a la cuenta antes mostrada", d.toString(), Integer.parseInt(id)));
+                            at.escribirArchivo();
+                        } catch (IOException ex) {
 
+                        }
+                        JOptionPane.showMessageDialog(null, "Se deposito con exito su dinero");
+                        cliente.setVisible(false);
+                    }
+                }
+            });
+            return c;
+        }).forEachOrdered((_item) -> {
             try {
                 adminlog al = new adminlog("./Log.txt");
                 al.cargarArchivo();
                 Date d = new Date();
-                al.setlog(new Log(Integer.toString(temp.getNumcuenta()), "Se deposito el dinero", d.toString()));
+                al.setlog(new Log(id, "Fallo al depositar dinero", d.toString()));
                 al.escribirArchivo();
-                admintransaccion at = new admintransaccion("./Transacciones.txt");
-                at.cargarArchivo();
-                at.settransaccion(new Transaccion(Integer.toString(temp.getNumcuenta()), "Se deposito el dinero a la cuenta antes mostrada", d.toString(), Integer.parseInt(id)));
-                at.escribirArchivo();
             } catch (IOException ex) {
 
             }
-            JOptionPane.showMessageDialog(null,"Se deposito con exito su dinero");
-            cliente.setVisible(false);
-        }
-        try {
-            adminlog al = new adminlog("./Log.txt");
-            al.cargarArchivo();
-            Date d = new Date();
-            al.setlog(new Log(Integer.toString(temp.getNumcuenta()), "Fallo al depositar dinero", d.toString()));
-            al.escribirArchivo();
-        } catch (IOException ex) {
+        });
+    }//GEN-LAST:event_jButton15MouseClicked
+
+    private void jButton16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton16MouseClicked
+        // TODO add your handling code here:
+        admincliente ac = new admincliente("./clientes.txt");
+        ac.cargarArchivo();
+        String id = JOptionPane.showInputDialog("Ingrese su id para confirmar:");
+        for (cliente cl : ac.getCliente()) {
+            if (cl.getIdusuario() == Integer.parseInt(id)) {
+                for (Transaccion tr : cl.getTransacciones()) {
+                    Object[] newrow = {tr.getNumcuenta(), tr.getDescripcion(), tr.getFecha(), tr.getId()};
+                    DefaultTableModel model = (DefaultTableModel) tb_transacciones.getModel();
+                    model.addRow(newrow);
+                    tb_transacciones.setModel(model);
+                    try {
+                        adminlog al = new adminlog("./Log.txt");
+                        al.cargarArchivo();
+                        Date d = new Date();
+                        al.setlog(new Log(id, "Fallo al depositar dinero", d.toString()));
+                        al.escribirArchivo();
+                    } catch (IOException ex) {
+
+                    }
+                }
+
+            }
 
         }
-    }//GEN-LAST:event_jButton15MouseClicked
+    }//GEN-LAST:event_jButton16MouseClicked
+
+    private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
+        // TODO add your handling code here:
+        admincliente ac = new admincliente("./clientes.txt");
+        ac.cargarArchivo();
+        String id = JOptionPane.showInputDialog("Ingrese su id porfavor");
+        ac.getCliente().stream().filter((cl) -> (cl.getIdusuario() == Integer.parseInt(id))).map((cl) -> new DefaultComboBoxModel(cl.getListacuentas().toArray())).forEachOrdered((model) -> {
+            cb_cuentas2.setModel(model);
+        });
+    }//GEN-LAST:event_jButton17MouseClicked
+
+    private void jButton18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton18MouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog("Ingrese su id porfavor");
+        Cuentas temp = (Cuentas) cb_cuentas2.getSelectedItem();
+        if (temp != null) {
+            tf_numcuenta1.setText(Integer.toString(temp.getNumcuenta()));
+            tf_saldo1.setText(Integer.toString(temp.getSaldo()));
+            tf_idus1.setText(Integer.toString(temp.getIdusuario()));
+            try {
+                adminlog al = new adminlog("./Log.txt");
+                al.cargarArchivo();
+                Date d = new Date();
+                al.setlog(new Log(id, "Reviso sus transacciones", d.toString()));
+                al.escribirArchivo();
+            } catch (IOException ex) {
+
+            }
+        }
+
+    }//GEN-LAST:event_jButton18MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1583,6 +1803,7 @@ public class Exam2 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_clientes;
     private javax.swing.JComboBox<String> cb_cuentas;
     private javax.swing.JComboBox<String> cb_cuentas1;
+    private javax.swing.JComboBox<String> cb_cuentas2;
     private javax.swing.JComboBox<String> cb_cuentascli;
     private javax.swing.JComboBox<String> cb_elegiratm;
     private javax.swing.JDialog cliente;
@@ -1600,6 +1821,9 @@ public class Exam2 extends javax.swing.JFrame {
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1647,7 +1871,13 @@ public class Exam2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1658,6 +1888,7 @@ public class Exam2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jb_aceptar;
     private javax.swing.JButton jb_cliente;
     private javax.swing.JButton jb_crearatm;
@@ -1676,21 +1907,25 @@ public class Exam2 extends javax.swing.JFrame {
     private javax.swing.JSpinner sp_100;
     private javax.swing.JSpinner sp_500;
     private javax.swing.JTabbedPane tab;
+    private javax.swing.JTable tb_transacciones;
     private javax.swing.JTextField tf_apeus;
     private javax.swing.JTextField tf_apeus1;
     private javax.swing.JTextField tf_contraseñaus;
     private javax.swing.JTextField tf_contraseñaus1;
     private javax.swing.JTextField tf_idatm;
     private javax.swing.JTextField tf_idprop;
+    private javax.swing.JTextField tf_idprop1;
     private javax.swing.JTextField tf_idus;
     private javax.swing.JTextField tf_idus1;
     private javax.swing.JTextField tf_manetenimiento;
     private javax.swing.JTextField tf_numcuenta;
+    private javax.swing.JTextField tf_numcuenta1;
     private javax.swing.JTextField tf_primus;
     private javax.swing.JTextField tf_primus1;
     private javax.swing.JTextField tf_retiro;
     private javax.swing.JTextField tf_retiro1;
     private javax.swing.JTextField tf_saldo;
+    private javax.swing.JTextField tf_saldo1;
     private javax.swing.JTextField tf_saldoa;
     private javax.swing.JTextField tf_segunape;
     private javax.swing.JTextField tf_segunape1;

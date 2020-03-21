@@ -5,6 +5,7 @@
  */
 package examen2_diegovarela;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -12,7 +13,7 @@ import java.util.Date;
  *
  * @author diego
  */
-public class Users {
+public class Users implements Serializable{
     private int idusuario ;
     private String primnombre;
     private String segunnombre;
@@ -21,8 +22,8 @@ public class Users {
     private Date nacimiento;
     private Date afiliacion;
     private String contraseña;
-    private ArrayList <Transaccion> transacciones=new ArrayList();
-
+  
+private static final long SerialVersionUID = 777L;
     public Users(int idusuario, String primnombre, String segunnombre, String apellido, String segunapellido, Date nacimiento, Date afiliacion,String contraseña) {
         this.idusuario = idusuario;
         this.primnombre = primnombre;
@@ -98,13 +99,7 @@ public class Users {
         this.afiliacion = afiliacion;
     }
 
-    public ArrayList<Transaccion> getTransacciones() {
-        return transacciones;
-    }
-
-    public void setTransacciones(ArrayList<Transaccion> transacciones) {
-        this.transacciones = transacciones;
-    }
+   
 
     @Override
     public String toString() {

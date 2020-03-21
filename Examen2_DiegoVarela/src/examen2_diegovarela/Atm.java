@@ -5,18 +5,22 @@
  */
 package examen2_diegovarela;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  * @author diego
  */
-public class Atm {
+public class Atm implements Serializable {
+
     private String ubicacion;
     private int id;
     private Date Fabricacion;
     private String Mantenimiento;
     private int saldo;
+    private static final long SerialVersionUID = 777L;
+
     public Atm(String ubicacion, int id, Date Fabricacion, String Mantenimiento) {
         this.ubicacion = ubicacion;
         this.id = id;
@@ -68,5 +72,5 @@ public class Atm {
     public String toString() {
         return "Atm{" + "ubicacion=" + ubicacion + '}';
     }
-    
+
 }
