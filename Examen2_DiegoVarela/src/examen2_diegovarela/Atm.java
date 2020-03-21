@@ -16,12 +16,20 @@ public class Atm {
     private int id;
     private Date Fabricacion;
     private String Mantenimiento;
-    
+    private int saldo;
     public Atm(String ubicacion, int id, Date Fabricacion, String Mantenimiento) {
         this.ubicacion = ubicacion;
         this.id = id;
         this.Fabricacion = Fabricacion;
         this.Mantenimiento = Mantenimiento;
+    }
+
+    public int getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
     }
 
     public String getUbicacion() {

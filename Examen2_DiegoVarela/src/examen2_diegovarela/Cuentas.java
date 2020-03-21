@@ -46,7 +46,7 @@ public class Cuentas {
 
     @Override
     public String toString() {
-        return "Cuentas{" + "saldo=" + saldo + ", idusuario=" + idusuario + '}';
+        return "saldo=" + saldo + ", idusuario=" + idusuario ;
     }
     
 }

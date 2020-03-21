@@ -20,9 +20,10 @@ public class Users {
     private String segunapellido;
     private Date nacimiento;
     private Date afiliacion;
+    private String contraseña;
     private ArrayList <Transaccion> transacciones=new ArrayList();
 
-    public Users(int idusuario, String primnombre, String segunnombre, String apellido, String segunapellido, Date nacimiento, Date afiliacion) {
+    public Users(int idusuario, String primnombre, String segunnombre, String apellido, String segunapellido, Date nacimiento, Date afiliacion,String contraseña) {
         this.idusuario = idusuario;
         this.primnombre = primnombre;
         this.segunnombre = segunnombre;
@@ -30,6 +31,15 @@ public class Users {
         this.segunapellido = segunapellido;
         this.nacimiento = nacimiento;
         this.afiliacion = afiliacion;
+        this.contraseña=contraseña;
+    }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
     }
 
     public int getIdusuario() {
