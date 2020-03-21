@@ -1,1 +1,1 @@
-Se deposito el dinero a la cuenta antes mostrada;90;67;Fri Mar 20 21:48:24 CST 2020;
+Retiro de dinero;508;57;Fri Mar 20 22:22:58 CST 2020;

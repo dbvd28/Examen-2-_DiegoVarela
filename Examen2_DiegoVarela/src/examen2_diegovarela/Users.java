@@ -22,7 +22,7 @@ public class Users implements Serializable{
     private Date nacimiento;
     private Date afiliacion;
     private String contraseña;
-  
+   private ArrayList <Transaccion> transacciones=new ArrayList();
 private static final long SerialVersionUID = 777L;
     public Users(int idusuario, String primnombre, String segunnombre, String apellido, String segunapellido, Date nacimiento, Date afiliacion,String contraseña) {
         this.idusuario = idusuario;
@@ -33,6 +33,14 @@ private static final long SerialVersionUID = 777L;
         this.nacimiento = nacimiento;
         this.afiliacion = afiliacion;
         this.contraseña=contraseña;
+    }
+
+    public ArrayList<Transaccion> getTransacciones() {
+        return transacciones;
+    }
+
+    public void setTransacciones(ArrayList<Transaccion> transacciones) {
+        this.transacciones = transacciones;
     }
 
     public String getContraseña() {
